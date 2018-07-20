@@ -1,0 +1,24 @@
+<input (keyup.enter)="addPost(newStudent)" #newStudent placeholder="Add new Student" type="text" class="form-control">
+<br>
+
+<div id="accordion">
+  <div class="card" *ngFor="let post of posts">
+    <div class="card-header" id="id post.rollno">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#post.rollno" aria-expanded="true" aria-controls="post.rollno">
+          {{post.firstName}} {{post.lastName}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="post.rollno" class="collapse show" aria-labelledby="id post.rollno" data-parent="#accordion">
+      <div class="card-body">
+        <p> Rollno: {{post.rollno}}</p>
+        <p> englishMarks: {{post.englishMarks}}</p>
+        <p> mathsMarks: {{post.mathsMarks}}</p>
+        <p> scienceMarks: {{post.scienceMarks}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

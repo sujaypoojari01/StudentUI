@@ -18,11 +18,15 @@ export class ApiService {
   }
 
   addStudent(data) {
-    /*  let post = {
-      firstName: "DummyData"
-    }; */
-    console.log(data);
-    return this.http.post(this.urlAdd, data);
+    let post = {
+      firstName: data.firstName,
+      lastName: "Dummy",
+      englishMarks: 50,
+      mathsMarks: 50,
+      scienceMarks: 50
+    };
+    console.log(post);
+    return this.http.post(this.urlAdd, post);
   }
   deleteStudent(id) {
     let url = this.urlAdd + "/" + id;
